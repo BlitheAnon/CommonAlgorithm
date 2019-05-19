@@ -6,3 +6,4 @@
 ## 5.insertionSort.js 插入排序，二分插入排序
 ## 6.deepClone.js 对象深度克隆
 ## 7.typeJudge.js 数据类型判断
+## 8.extend.js 继承实现
