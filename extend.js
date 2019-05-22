@@ -33,7 +33,7 @@ console.log(dog instanceof Dog);
 //2.组合继承
 function Cat(name) {
     //将Animal上下文this改为cat对象的
-    Animal.call(this);
+    Animal.call(this,name);
     this.name=name||'cat';
 }
 
