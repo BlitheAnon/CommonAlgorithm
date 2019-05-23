@@ -8,3 +8,4 @@
 ## 7.typeJudge.js 数据类型判断
 ## 8.extend.js 继承实现
 ## 9.promise.js 继承实现
+## 10.arrayDeduplication.js 数组去重
