@@ -30,3 +30,9 @@ typeof new Date(); // "object"
 //其语法是object instanceof constructor
 //左对象，右函数
 //只有在比较自定义的对象时才有意义。如果用来比较内置类型，将会和 typeof 操作符 一样用处不大。
+
+
+//Object.prototype.toString.call()
+//实例
+//Object.prototype.toString.call([1,3,4]);
+//"[object Array]"
