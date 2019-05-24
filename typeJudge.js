@@ -16,6 +16,7 @@
 
 //typeof 的能力有限，其对于null, Date、RegExp类型返回的都是"object"
 /*
+typeof [] // 'object'
 typeof null // 'object'
 typeof {}; // "object"
 typeof []; // "object"

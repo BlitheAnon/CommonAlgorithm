@@ -10,9 +10,11 @@ function deepClone(obj) {
     //初始化一个新容器，后面用来分别添加数组值，对象值
     let newObj=obj instanceof Array?[]:{};
     for (let item in obj) {
-        let temp=typeof obj[item]=='object'?deepClone(obj[item]):obj[item];
-        //将克隆后的值添加到容器
-        newObj[item]=temp;
+        //判断对象是否具有该属性
+        if (obj.hasOwnProperty(item)) {
+            //将克隆后的值添加到容器
+            newObj[item]=typeof obj[item]=='object'?deepClone(obj[item]):obj[item];
+        }
     }
     return newObj;
 }
