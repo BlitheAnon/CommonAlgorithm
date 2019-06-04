@@ -1,5 +1,6 @@
 //javaSctipt数据类型7种: Number, String, Boolean, Null, Undefined, Object, Symbol
 //基本数据类型6种：String Number Boolean Null Undefined Symbol(es6)
+//引用类型有这几种：Object、Array、RegExp、Date、Function、特殊的基本包装类型(String、Number、Boolean)以及单体内置对象(Global、Math)。 
 //复杂数据类型1种：Object
 //js类型判断，instanceof,typeof
 //typeof一元运算符，用来返回操作数类型的字符串

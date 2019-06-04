@@ -12,6 +12,8 @@ function deepClone(obj) {
     for (let item in obj) {
         //判断对象是否具有该属性
         if (obj.hasOwnProperty(item)) {
+            //浅拷贝
+            //newObj[item] = obj[item];
             //将克隆后的值添加到容器
             newObj[item]=typeof obj[item]=='object'?deepClone(obj[item]):obj[item];
         }
