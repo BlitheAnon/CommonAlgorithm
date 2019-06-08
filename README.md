@@ -7,5 +7,6 @@
 ## 6.deepClone.js 对象深度克隆
 ## 7.typeJudge.js 数据类型判断
 ## 8.extend.js 继承实现
-## 9.promise.js 继承实现
+## 9.promise.js promise使用
 ## 10.arrayDeduplication.js 数组去重
+## 11.shallSort.js 希尔排序
