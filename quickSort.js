@@ -1,44 +1,46 @@
+//确定一个基准数。
+//左右同时开始遍历数组，比基准数大的放右边，比基准数小的放左边
+//快速排序的平均时间复杂度是 O（nlogn），最坏情况下的时间复杂度是O（n^2)
+var arr = [5, 7, 1, 8, 4];
+quickSort(arr, 0, arr.length - 1);
+console.log(arr);
 
-leftarr=[]
-rightarr=[]
-function quickSort(arr, _left, _right) {
-    var left = _left;
-    var right = _right;
-    //初始化临时元素
-    var temp = 0;
-    //数组内至少有两个元素
-    if (left < right) {
-        temp = arr[left]; //设定第一个元素为基准元素
-        while (left != right) { //从左右两边扫描，直到left=right
-            //从右向左扫描，找到第一个小于基准元素的元素
-            while (right > left && arr[right] >= temp) {
-                //未找到继续左移
-                right--
-            }
-            //成功找到后交换左元素
-            arr[left] = arr[right]
-            // arr[right]=temp
-
-            //从左向右扫描，找到第一个大于基准元素的元素
-            while (left < right && arr[left] <= temp) {
-                //未找到继续右移
-                left++
-            }
-            //成功找到后交换右元素
-            arr[right] = arr[left]
-        }
-
-        //左右指针查找重合，将基准元素放回指针重合位置
-        arr[right] = temp
-        //或arr[right] = temp
-
-        //对基准元素左边元素进行递归
-        quickSort(arr, _left, left - 1)
-        //对基准元素右边元素进行递归
-        quickSort(arr, right + 1, _right)
-        //为什么_left不能设为常量0,_right设为常量4
+function quickSort(arr, left, right) {
+    if (left<right) {
+        //通过快排，求出基准数一次快排后的位置
+        let keyIndex=quickSortInner(arr,left,right);
+        //每次将分割后的左右两部分再次快排，不断操作原数组
+        quickSort(arr,left,keyIndex-1);
+        quickSort(arr,keyIndex+1,right);
     }
 }
-arr = [5, 7, 1, 8, 4];
-quickSort(arr, 0, arr.length - 1)
-console.log(arr);
+
+function quickSortInner(arr, left, right) {
+    //每一次快速排序，将数组分割成两部分，左边那部分整体小于基准数，右边部分大于基准数
+    //设基准数
+    let key = arr[left];
+
+    while (left < right) {
+        //从后向前查找，如果后面的数大于等于基数key，则继续向前
+        while (left < right && arr[right] >= key) {
+            //左移
+            right--;
+        }
+
+        //后面的数小于基数key时，替换left
+        arr[left] = arr[right];
+
+        //从前向后查找，如果前面的数小于等于基数key,则后移
+        while (left < right && arr[left] <= key) {
+            //右移
+            left++;
+        }
+
+        //发现存在前面的数大于基数key时，替换
+        arr[right] = arr[left];
+    }
+
+    arr[left] = key;
+    //返回一次快排后基准数的位置
+    return left;
+}
