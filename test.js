@@ -108,3 +108,13 @@ function getUrlParam(sUrl, sKey) {
 
 
 }
+
+function sleep(ms){
+return new Promise((resolve)=>setTimeout(resolve,ms));
+}
+async function test(){
+var temple=await sleep(3000);
+console.log(1111);
+return temple;
+}
+test();

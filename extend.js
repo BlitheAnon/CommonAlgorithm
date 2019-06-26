@@ -9,7 +9,7 @@ function Animal(name) {
     };
 }
 
-//通过原型链给父类添加方法
+//通过原型给父类添加方法，自定义属性作用
 Animal.prototype.sleep=function() {
     console.log(this.name+' is sleeping');
 };
@@ -28,6 +28,7 @@ dog.eat();
 dog.sleep();
 console.log(dog instanceof Animal);
 console.log(dog instanceof Dog);
+console.log(dog instanceof Object);
 
 
 //2.组合继承

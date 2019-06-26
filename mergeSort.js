@@ -38,3 +38,5 @@ function merge(left, right) {
     //合并左右数组
     return result.concat(left).concat(right);
 }
+
+console.log(typeof window === 'undefined');

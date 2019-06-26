@@ -5,7 +5,7 @@
 
 //XMLHttpRequest对象实例化
 var xhr = new XMLHttpRequest();
-//设定请求方法，地址，是否异步
+//设定请求方法，地址，是否异步，默认true
 xhr.open('get', 'xxx.php', true);
 //设定需要发送的报文主体
 xhr.send(null);
@@ -25,3 +25,19 @@ xhr.onreadystatechange=function() {
 
 
 //如何实现顺序执行的ajax，用回调函数，也可以使用Promise.then或者async等?
+
+/*
+Ø  用户发出异步请求；
+
+Ø  创建 XMLHttpRequest 对象；
+
+Ø  告诉 XMLHttpRequest 对象哪个函数会处理 XMLHttpRequest 对象状态的改变，为此要把对象的 onReadyStateChange 属性设置为响应该事件的 JavaScript 函数的引用
+
+Ø  创建请求，用 open 方法指定是 get 还是 post ，是否异步， url 地址；
+
+Ø  发送请求， send 方法
+
+Ø  接收结果并分析
+
+Ø  实现刷新
+*/

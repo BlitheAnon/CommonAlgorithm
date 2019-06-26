@@ -19,4 +19,5 @@ for (var fraction = Math.floor(len / 2); fraction > 0; fraction = Math.floor(fra
         }
     }
 }
+
 console.log(arr);
