@@ -13,3 +13,4 @@
 ## 12.mergeSort.js 归并排序
 ## 13.newSleep.js 实现sleep
 ## 14.generate.js generate使用
+## 15.async.js async函数使用
