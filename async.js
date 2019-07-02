@@ -21,4 +21,4 @@ let sayHi=async function sayHi() {
 
 sayHi().then(result=>{
     console.log(result);
-});
+})
