@@ -14,3 +14,4 @@
 ## 13.newSleep.js 实现sleep
 ## 14.generate.js generate使用
 ## 15.async.js async函数使用
+## 16.newBind.js 自己写bind函数
