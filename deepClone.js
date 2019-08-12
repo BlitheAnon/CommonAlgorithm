@@ -5,22 +5,23 @@ var testObj2=[1,2,3];
 console.log(deepClone(testObj1));
 console.log(deepClone(testObj2));
 
+//a=[1,2,3,4]，还有一个对象a={0:1,1:2,2:3,3:4}
 //数组属于对象，先做判断
 function deepClone(obj) {
     //初始化一个新容器，后面用来分别添加数组值，对象值
     let newObj=obj instanceof Array?[]:{};
     for (let item in obj) {
         //判断对象是否具有该属性
+        //判断数组是否具有指定索引
         if (obj.hasOwnProperty(item)) {
             //浅拷贝
             //newObj[item] = obj[item];
-            //将克隆后的值添加到容器
+            //将克隆后的值添加到容器，对象放入{},数组放入[]
             newObj[item]=typeof obj[item]=='object'?deepClone(obj[item]):obj[item];
         }
     }
     return newObj;
 }
-
 
 //其实对于包装类，完全可以用=号来进行克隆，其实没有深度克隆一说
 //
