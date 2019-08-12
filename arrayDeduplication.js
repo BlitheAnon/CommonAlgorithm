@@ -1,4 +1,23 @@
 //数组去重3种方法
+//0,hasOwnProperty去重，hasOwnProperty效率最高
+var test1 = [1, 1, 1, 2, 3, 3, 4, 5];
+function uniqueArr(_arr) {
+    let temp_obj={};
+    let result_arr=[];
+    for (let index in _arr) {
+        //新增一个临时对象，key为数组value，value为1，不存在则添加
+        if (!temp_obj.hasOwnProperty(_arr[index])) {
+            //temp[index]=_arr[index];
+            temp_obj[_arr[index]]=1;
+            result_arr.push(_arr[index]);
+        }
+    }
+    return result_arr;
+}
+
+console.log(uniqueArr(test1));
+
+
 //1.indexOf循环去重
 //初始化一个空数组，循环目标数组添加进空数组，若存在则不添加
 var test = [1, 1, 1, 2, 3, 3, 4, 5];
