@@ -19,7 +19,6 @@ xhr.onreadystatechange=function() {
             //status判断请求是否成功，取得响应数据
             console.log(xhr.responseText);
         }
-
     }
 };
 
