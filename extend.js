@@ -15,11 +15,12 @@ Animal.prototype.sleep=function() {
 };
 //1.prototype原型链继承实现
 function Dog() {
-
+    
 }
 
 //Dog类取得父类的实例
 Dog.prototype=new Animal();
+//Dog.prototype=Animal.prototype;
 Dog.prototype.name='dog';
 
 var dog=new Dog();
