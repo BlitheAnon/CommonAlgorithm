@@ -4,15 +4,27 @@
 var p = new Promise(function(resolve, reject) {
     //延迟1秒执行
     setTimeout(function() {
-        resolve("success");
+        resolve("resolve");
     }, 1000);
-    console.log("创建一个新的Promise");
+    //reject('reject');
+    //console.log("创建一个新的Promise");
 });
 
 p.then(function(x) {
+    console.log('1');
     console.log(x);
-    console.log('then');
+},function(y) {
+    console.log('2');
+    console.log(y);
 });
+
+//then后的3种写法
+/*
+.then(fun1,fun2)
+.then(fun1)
+.then(null,fun2)
+*/
+//catch=.then(null,fun2)
 
 
 //链式调用
@@ -95,8 +107,8 @@ promise1.prototype.then=function(onFulfilled,onRejected) {
     }
 };
 
-var p1=new Promise1(function(resolve,reject) {
-    resolve(1);
+var p1=new promise1(function(resolve,reject) {
+    reject(1);
 })
 
 p1.then(function(x) {
