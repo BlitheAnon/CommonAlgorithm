@@ -19,3 +19,4 @@
 ## 18.asyncAwait.js async await使用
 ## 19.newInstanceOf.js instanceOf实现
 ## 20.newNew.js 模拟new实现
+## 21.newCall.js 实现call函数
