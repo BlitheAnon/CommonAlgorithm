@@ -21,3 +21,4 @@
 ## 20.newNew.js 模拟new实现
 ## 21.newCall.js 实现call函数
 ## 22.newApply.js 实现apply函数
+## 23.createObject.js 实现Object.create()函数
