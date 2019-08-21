@@ -18,3 +18,4 @@
 ## 17.findKAccount.js 找到数组第k大的数，返回个数
 ## 18.asyncAwait.js async await使用
 ## 19.newInstanceOf.js instanceOf实现
+## 20.newNew.js 模拟new实现
