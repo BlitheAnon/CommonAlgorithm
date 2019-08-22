@@ -27,17 +27,37 @@ p.then(function(x) {
 //catch=.then(null,fun2)
 
 
-//链式调用
+//链式调用使用
 var p = new Promise(function(resolve, reject) {
-    resolve('shit');
+    console.log('promise启动');
+    resolve(10);
 });
 
-p.then(function(a) {
-    console.log(a);
-}).then(function(b) {
-    console.log(b);
-}).then(function(c) {
-    console.log(c);
+function add(input) {
+    return new Promise(function(resolve,reject) {
+        console.log(input+',进行自加运算');
+        //注意：setTimeout第三个参数，为第一个函数的参数
+        setTimeout(resolve,1000,input+input);
+    });
+}
+
+function multiply(input) {
+    return new Promise(function(resolve,reject) {
+        console.log(input+',进行自乘运算');
+        setTimeout(resolve,1000,input*input);
+    });
+}
+
+p.then(add)
+.then(multiply)
+.then(add)
+.then(multiply)
+.then(function(result) {
+    console.log('结束');
+    console.log(result);
+}).catch(function(err) {
+    console.log('出错');
+    console.log(err);
 });
 
 
@@ -107,12 +127,16 @@ promise1.prototype.then=function(onFulfilled,onRejected) {
     }
 };
 
+//自己实现的promise测试
 var p1=new promise1(function(resolve,reject) {
+    resolve('shit');
     reject(1);
 })
 
 p1.then(function(x) {
     console.log(x);
+},function(y) {
+    console.log(y);
 });
 
 //promise.all使用
