@@ -4,6 +4,7 @@
 //算法适用于少量数据的排序
 //稳定
 //时间复杂度O(n^2）
+//参考底部新增实现
 
 var arr_test = new Array(1, 3, 2, 8, 9, 1, 5);
 
@@ -66,3 +67,37 @@ function insertionSort2(arr) {
 
     return arr;
 }
+
+//重写，插排
+//原理：取数组第一位开始，视为第一组有序数组，
+//遍历数组剩余部分(由后向前),插入到前面新的有序序列中
+//插排，小到大
+function insertSort(arr) {
+    for (var i = 1,len=arr.length; i < len; i++) {
+        for (var j = i; j>0; j--) {
+            if (arr[j-1]>arr[j]) {
+                let temp=arr[j-1];
+                arr[j-1]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    return arr;
+}
+
+//插排，大到小
+function insertSort(arr) {
+    for (var i = 1; i < arr.length; i++) {
+        for (var j = i; j>0; j--) {
+            if (arr[j-1]<arr[j]) {
+                let temp=arr[j-1];
+                arr[j-1]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    return arr;
+}
+
+var arr_test = new Array(1, 3, 2, 8, 9, 1, 5);
+console.log(insertSort(arr_test));

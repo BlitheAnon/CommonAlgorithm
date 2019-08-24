@@ -3,6 +3,7 @@
 //然后放到已排序序列的末尾。以此类推。
 //选择排序是不稳定的排序方法。
 //时间复杂度O(n^2）
+//参考见底部重写更新
 var test_arr = [2,3,0,1,5,4];
 console.log(selectionSort(test_arr));
 
@@ -28,3 +29,39 @@ function selectionSort(arr) {
 
     return arr;
 }
+
+//重写选排：
+//原理：外层循环每轮设第一个为最大值（或最小值），数组其余元素分别和最大值对比，每轮选出一个最值放前面
+//大到小
+function selectSort(arr) {
+    for (var i = 0,len=arr.length; i < len-1; i++) {
+        //每轮确定一个最大的数
+        for (var j = i+1; j < len; j++) {
+            let max=arr[i];
+            if (arr[j]>max) {
+                //交换
+                arr[i]=arr[j];
+                arr[j]=max;
+            }
+        }
+    }
+    return arr;
+}
+
+//小到大
+function selectSort(arr) {
+    for (let i = 0,len=arr.length; i < len-1; i++) {
+        for (let j = i+1; j<len; j++) {
+            let min=arr[i];
+            if (arr[j]<min) {
+                arr[i]=arr[j];
+                arr[j]=min;
+            }
+        }
+    }
+
+    return arr;
+}
+
+var test_arr = [2,3,0,1,5,4];
+console.log(selectSort(test_arr));

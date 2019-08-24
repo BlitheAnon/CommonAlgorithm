@@ -13,5 +13,6 @@ function bubble(arr) {
     return arr;
 }
 
-let _bubArr=[4,3,2,6,2,1,5];
+// let _bubArr=[4,3,2,6,2,1,5];
+let _bubArr=[4,3,2];
 console.log(bubble(_bubArr));
