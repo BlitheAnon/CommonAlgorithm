@@ -44,3 +44,39 @@ function quickSortInner(arr, left, right) {
     //返回一次快排后基准数的位置
     return left;
 }
+
+//重写，
+//原理：先确定一个基准数，把数组所有小于基准的值放基准左边，大于基准的值放基数右边，
+//递归左右侧数组，重复第二步
+function quickSort(arr) {
+    const len=arr.length;
+    //设置退出递归条件
+    if (len<2) return arr;
+    const basic=arr[0],left=[],right=[];
+    for (let i = 1; i < len; i++) {
+        if (arr[i]>=basic) {
+            right.push(arr[i])
+        }else{
+            left.push(arr[i])
+        }
+    }
+
+    return quickSort(left).concat(basic,quickSort(right));
+}
+
+var arr = [5, 7, 1, 8, 4];
+console.log(quickSort(arr));
+
+//或？？参考，神仙写法
+const sort = (x, ...xs) => {
+    const sortAgain = f => arr => {
+        const res = arr.filter(f)
+        return res.length > 0 ? sort(...res) : []
+    }
+
+    return xs.length === 0
+        ? [x]
+        : [...sortAgain(v => v < x)(xs), x, ...sortAgain(v => v >= x)(xs)]
+}
+const arr = [7, 2, 6, 1, 2, 8, 4, 9, 0, 9, 7, 5, 4, 2]
+const ascendArr = sort(...arr)
