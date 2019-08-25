@@ -48,6 +48,7 @@ function quickSortInner(arr, left, right) {
 
 //重写，
 //原理：先确定一个基准数，把数组所有小于基准的值放基准左边，大于基准的值放基数右边，
+//终止条件为数组length<2
 //递归左右侧数组，重复第二步
 function quickSort(arr) {
     const len=arr.length;
@@ -65,8 +66,6 @@ function quickSort(arr) {
     return quickSort(left).concat(basic,quickSort(right));
 }
 
-var arr = [5, 7, 1, 8, 4];
-console.log(quickSort(arr));
 
 //或？？参考，神仙写法
 const sort = (x, ...xs) => {
