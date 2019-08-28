@@ -35,8 +35,6 @@ function merge(left, right) {
     while (right.length)
         result.push(right.shift());
     return result;
-
-    return result;
 }
 
 //ture
