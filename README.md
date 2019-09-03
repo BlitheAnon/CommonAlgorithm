@@ -9,10 +9,10 @@
 ## 8.extend.js 继承实现
 ## 9.promise.js promise使用
 ## 10.arrayDeduplication.js 数组去重
-## 11.shallSort.js 希尔排序
+## 11.shellSort.js 希尔排序
 ## 12.mergeSort.js 归并排序
 ## 13.newSleep.js 实现sleep
-## 14.generate.js generate使用
+## 14.generator.js generate使用
 ## 15.async.js async函数使用
 ## 16.newBind.js 自己写bind函数
 ## 17.findKAccount.js 找到数组第k大的数，返回个数
@@ -24,3 +24,5 @@
 ## 23.createObject.js 实现Object.create()函数
 ## 24.stringProcess.js 字符串处理面试题汇总
 ## 25.twoDimArray.js 二维数组实现
+## 26.multiArrToArr.js 多维数组转一维
+## 27.newJsonParse.js 实现json字符串转json对象（未完成）
