@@ -1,4 +1,29 @@
 //js继承实现
+/*最理想的继承实现?*/
+function Parent(name) {
+    this.name=name;
+}
+
+Parent.prototype.eat=function() {
+    console.log(this.name+'父吃饭');
+}
+
+function Child(name) {
+    Parent.call(this);
+    this.name=name;
+}
+Child.prototype=Object.create(Parent.prototype);
+Child.prototype.eat=function() {
+    console.log(this.name+'子吃饭');
+};
+
+Child.prototype.constructor=Child;
+
+let parent=new Parent('Father');
+parent.eat();
+
+let child=new Child('Son');
+child.eat();
 //父类
 function Animal(name) {
     //属性
@@ -15,7 +40,7 @@ Animal.prototype.sleep=function() {
 };
 //1.prototype原型链继承实现
 function Dog() {
-    
+
 }
 
 //Dog类取得父类的实例
