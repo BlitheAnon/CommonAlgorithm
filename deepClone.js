@@ -2,9 +2,21 @@
 var testObj1={a:1,b:{c:2}};
 var testObj2=[1,2,3];
 
-console.log(deepClone(testObj1));
-console.log(deepClone(testObj2));
+// console.log(deepClone(testObj1));
+// console.log(deepClone(testObj2));
 
+//简单深度克隆
+function simpleDeepClone(_obj) {
+    return JSON.parse(JSON.stringify(_obj));
+}
+
+var funObj=function() {
+    console.log('shit');
+};
+
+let newFunObj=deepClone(funObj);
+console.log(newFunObj);
+// newFunObj();
 //a=[1,2,3,4]，还有一个对象a={0:1,1:2,2:3,3:4}
 //数组属于对象，先做判断
 function deepClone(obj) {
