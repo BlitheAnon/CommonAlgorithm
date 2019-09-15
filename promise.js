@@ -190,3 +190,22 @@ Promise.race([p1, p2]).then((result) => {
   console.log(error)  // 打开的是 'failed'
   console.log('error');
 });
+
+
+//promise和settimeout 执行顺序
+//promise的任务会在当前事件循环末尾中执行，
+//settimeout中的任务是在下一次事件循环中执行。
+new Promise(function(resolve,reject) {
+    console.log(2);
+    resolve();
+    setTimeout(function() {
+        console.log(1);
+    },0);
+}).then(function(x) {
+    console.log(4);
+    setTimeout(function() {
+        console.log(6);
+    });
+});
+
+console.log(5);
